@@ -1,3 +1,4 @@
+# Spring Boot Best practices Kit
 This project serves as a foundational template for building well-structured and efficient backend applications. It's designed for practice purposes to showcase essential backend development principles you can leverage when starting new projects. By referring to this codebase, you can ensure consistent best practices, a clean structure, and a solid starting point for your development endeavors.
 
 ## Features
