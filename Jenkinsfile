@@ -1,63 +1,56 @@
 pipeline {
-  agent any
+agent any
 
-  tools {
-    jdk 'JDK17'
-  }
 
-  environment {
-    // SONARQUBE_SERVER = 'SonarQube'
-  }
+stages {
+stage('Checkout') {
+steps { checkout scm }
+}
 
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
 
-    stage('Compile') {
-      steps {
-        sh 'mvn -B clean compile'
-      }
-    }
+stage('Show Java & Maven') {
+steps {
+bat 'java -version'
+bat 'mvn -v'
+}
+}
 
-    stage('Unit Tests') {
-      steps {
-        sh 'mvn -B test'
-      }
-      post {
-        always {
-          junit 'target/surefire-reports/*.xml'
-        }
-      }
-    }
 
-    stage('Package') {
-      steps {
-        sh 'mvn -B package -DskipTests=false'
-      }
-      post {
-        success {
-          archiveArtifacts artifacts: 'target/*.jar,target/*.war', fingerprint: true
-        }
-      }
-    }
+stage('Compile') {
+steps {
+bat 'mvn -B clean compile'
+}
+}
 
-    stage('SonarQube Analysis') {
-      when { expression { fileExists('pom.xml') } }
-      steps {
-        // withSonarQubeEnv("${SONARQUBE_SERVER}") {
-        //   sh 'mvn -B sonar:sonar'
-        // }
-        echo 'SonarQube étape prête (à activer après config Sonar).'
-      }
-    }
-  }
 
-  post {
-    always {
-      echo 'Pipeline terminé.'
-    }
-  }
+stage('Unit Tests') {
+steps {
+bat 'mvn -B test'
+}
+post {
+always {
+junit 'target\\surefire-reports\\*.xml'
+}
+}
+}
+
+
+stage('Package') {
+steps {
+bat 'mvn -B package'
+}
+post {
+success {
+archiveArtifacts artifacts: 'target\\*.jar,target\\*.war', fingerprint: true
+}
+}
+}
+
+
+stage('SonarQube Analysis') {
+steps {
+echo 'SonarQube désactivé pour l’instant.'
+}
+}
+}
 }
