@@ -2,7 +2,7 @@
 This project serves as a foundational template for building well-structured and efficient backend applications. It's designed for practice purposes to showcase essential backend development principles you can leverage when starting new projects. By referring to this codebase, you can ensure consistent best practices, a clean structure, and a solid starting point for your development endeavors.
 
 ## Features
-
+ 
 - **Organized Project Structure**: Maintain a clean and scalable folder hierarchy for effortless project navigation and management.
 - **Robust HTTP Handling**: Implement proper handling of HTTP requests, responses, and status codes to ensure appropriate communication with clients.
 - **Data Validation & Integrity**: Enforce data validation to guarantee the accuracy and consistency of information within your application.
@@ -22,4 +22,4 @@ This project serves as a foundational template for building well-structured and 
 - **SLF4J**: Provides a simple logging facade, allowing flexibility in choosing a specific logging implementation.
 - **JUnit**: A popular unit testing framework for verifying the correctness of individual units of code.
 - **Mockito**: A mocking framework that enables the creation of mock objects for testing purposes, simulating real-world dependencies.
-- **Swagger**: An open-source framework for generating comprehensive API documentation and facilitating API testing.
+- **Swagger**: An open-source  framework for generating comprehensive API documentation and facilitating API testing.
