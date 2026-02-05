@@ -2,7 +2,7 @@
 This project serves as a foundational template for building well-structured and efficient backend applications. It's designed for practice purposes to showcase essential backend development principles you can leverage when starting new projects. By referring to this codebase, you can ensure consistent best practices, a clean structure, and a solid starting point for your development endeavors.
 
 ## Features
-
+ 
 - **Organized Project Structure**: Maintain a clean and scalable folder hierarchy for effortless project navigation and management.
 - **Robust HTTP Handling**: Implement proper handling of HTTP requests, responses, and status codes to ensure appropriate communication with clients.
 - **Data Validation & Integrity**: Enforce data validation to guarantee the accuracy and consistency of information within your application.

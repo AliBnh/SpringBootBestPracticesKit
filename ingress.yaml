@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: springbootbestpracticeskit-ingress
+spec:
+  rules:
+    - host: spring.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: springbootbestpracticeskit-svc
+                port:
+                  number: 80
