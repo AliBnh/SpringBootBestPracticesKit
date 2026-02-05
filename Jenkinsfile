@@ -17,15 +17,11 @@ pipeline {
 
     stage('Build & Tests (with Coverage)') {
       steps {
-        // verify => compile + tests + génération rapport jacoco (si plugin jacoco bien configuré)
         bat 'mvn -B clean verify'
       }
       post {
         always {
-          // résultats des tests
           junit 'target\\surefire-reports\\*.xml'
-
-          // archive le rapport JaCoCo (utile comme preuve)
           archiveArtifacts artifacts: 'target\\site\\jacoco\\**', allowEmptyArchive: true
         }
       }
@@ -33,8 +29,6 @@ pipeline {
 
     stage('Package') {
       steps {
-        // Optionnel: si verify a déjà fait le packaging, on peut juste repackager sans retester
-        // (évite de relancer les tests une 2e fois)
         bat 'mvn -B -DskipTests package'
       }
       post {
