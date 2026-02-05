@@ -22,4 +22,4 @@ This project serves as a foundational template for building well-structured and 
 - **SLF4J**: Provides a simple logging facade, allowing flexibility in choosing a specific logging implementation.
 - **JUnit**: A popular unit testing framework for verifying the correctness of individual units of code.
 - **Mockito**: A mocking framework that enables the creation of mock objects for testing purposes, simulating real-world dependencies.
-- **Swagger**: An open-source framework for generating comprehensive API documentation and facilitating API testing.
+- **Swagger**: An open-source framework for  generating comprehensive API documentation and facilitating API testing.
