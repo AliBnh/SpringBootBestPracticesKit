@@ -64,6 +64,7 @@ public class PokemonControllerTests {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Pikachu"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.type").value("Electric"));
     }
+    @Test
     public void PokemonController_GetAllPokemon_ReturnResponseDto() throws Exception {
         PokemonResponsePage responseDto = PokemonResponsePage.builder().pageSize(10).last(true).pageNo(1).content(Arrays.asList(pokemonDto)).build();
         when(pokemonService.getAllPokemon(1,10)).thenReturn(responseDto);
